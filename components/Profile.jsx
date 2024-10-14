@@ -21,8 +21,8 @@ const Profile = ({user,headline,desc,posts}) => {
         width={100}
         height={100}
         />
-        <p className='text-gray-700' >{user.name}</p>
-        <p className='text-gray-500' >{user.email}</p>
+        <p className='text-gray-700' >{user?.name}</p>
+        <p className='text-gray-500' >{user?.email}</p>
         </div>
         </div>
         <div className='flex flex-col'>
