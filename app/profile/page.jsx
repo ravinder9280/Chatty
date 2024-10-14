@@ -20,8 +20,9 @@ const page = () => {
                 console.error(error);
             }
         }
-        fetchData();
-    },[])
+        if (session?.user.id) fetchData();
+    }, [session?.user.id]);
+  
 
   return (
     <div>
