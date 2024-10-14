@@ -13,9 +13,9 @@ const page = () => {
     useEffect(()=>{
         const fetchData=async()=>{
             try {
-                const response=await axios.get(`/api/users/${session?.user.id}/posts`);
+                const response=await axios.get(`/api/users/${session?.user?.id}/posts`);
                 console.log(response.data);
-                setData(response.data);
+                setData(response.data)
             } catch (error) {
                 console.error(error);
             }
