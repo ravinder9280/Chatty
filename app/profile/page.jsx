@@ -13,7 +13,7 @@ const page = () => {
     useEffect(()=>{
         const fetchData=async()=>{
             try {
-                const response=await axios.get('/api/users/67090bfdc597bd45a3813ba1/posts');
+                const response=await axios.get(`/api/users/${session?.user.id}/posts`);
                 console.log(response.data);
                 setData(response.data);
             } catch (error) {
