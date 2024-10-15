@@ -40,7 +40,7 @@ const page = () => {
 
           <button onClick={()=>{
             signOut();
-          }} className="border text-red-500 hover:bg-gray-300 border-red-500 rounded-full p-2 px-4">
+          }} className="border text-red-500 text-xs hover:bg-gray-300 border-red-500 rounded-full p-2 px-4">
             Sign Out
           </button>
           <Link href='/profile'>
