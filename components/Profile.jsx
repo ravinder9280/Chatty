@@ -2,8 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import PromptCard from './PromptCard';
 
-const Profile = ({ user, headline, desc, posts }) => {
+const Profile = ({ user, headline, desc, posts,handleDelete ,handleEdit}) => {
   console.log(posts);
+  
 
   if (!user) {
     return <div>User not found</div>; // or some other fallback content
@@ -39,6 +40,8 @@ const Profile = ({ user, headline, desc, posts }) => {
                 tag={item.tag}
                 username={item.creator.username}
                 email={item.creator.email}
+                handleEdit={handleEdit} handleDelete={handleDelete}
+                id={item._id}
               />
             ))}
         </div>

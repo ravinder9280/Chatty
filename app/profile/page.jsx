@@ -5,10 +5,34 @@ import Profile from '@/components/Profile'
 import { useSession } from 'next-auth/react'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+import { toast } from 'sonner';
+import { useRouter } from "next/navigation";
+
 
 const page = () => {
+  const router = useRouter()
+
+    const handleEdit = (postid) => {
+        router.push(`/edit-prompt?id=${postid}`);
+      };
+    
     const {data:session}=useSession()
     const [data,setData]=useState(false)
+    const handleDelete=async(id)=>{
+        setData(data.filter(post=>post._id!==id))
+        try {
+            const response=await axios.delete(`/api/users/${id}/posts`);
+            console.log("Deleted Post");
+            if(response.data.success){
+                toast.success(response.data.message);
+            }
+            else{
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     useEffect(()=>{
         const fetchData=async()=>{
@@ -24,9 +48,11 @@ const page = () => {
     }, [session?.user.id]);
   
 
+    
+
   return (
     <div>
-        <Profile headline="My" posts={data} desc={"Customize Your Profile"} user={session?.user} /> 
+        <Profile headline="My" handleDelete={handleDelete} handleEdit={handleEdit}  posts={data} desc={"Customize Your Profile"} user={session?.user} /> 
 
         
     </div>

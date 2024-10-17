@@ -1,10 +1,14 @@
 import React, {  } from 'react'
 import Image from 'next/image'
 import { BsCopy } from "react-icons/bs";
+import { CiEdit } from "react-icons/ci";
+import { AiOutlineDelete } from "react-icons/ai"
 
 
 
-const PromptCard = ({image,tag,prompt,username,email,handleCopy}) => {
+
+const PromptCard = ({image,tag,prompt,username,email,handleCopy,handleEdit,handleDelete,id}) => {
+ 
   
   return (
     <div className='p-3 flex flex-col gap-3  rounded-md shadow-md '>
@@ -37,11 +41,31 @@ const PromptCard = ({image,tag,prompt,username,email,handleCopy}) => {
             {prompt}
 
             </p>
+            <div className='flex items-center justify-between'>
+
             <p className=' text-sm text-blue-600'>
             {tag}
 
+            </p>
+            {handleEdit&&handleDelete?
+            
+          
+            <div className='flex gap-4'>
+
+            <p onClick={()=>handleEdit(id)} className='text-gray-700  cursor-pointer hover:text-black' >
+            <CiEdit />
 
             </p>
+            <p onClick={()=>handleDelete(id)} className='text-gray-600 cursor-pointer  hover:text-black'>
+              
+            <AiOutlineDelete />
+
+
+            </p>
+            </div>:<></>
+          }
+
+            </div>
 
         </div>
 
