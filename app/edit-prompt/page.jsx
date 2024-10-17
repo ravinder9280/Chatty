@@ -54,7 +54,7 @@ const page = () => {
           })
           router.push('/profile', { scroll: false })
         } else {
-          toast.error(response.data.message)
+          toast.error(response.data.message);
         }
 
       }
