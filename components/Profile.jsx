@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/image'
 import PromptCard from './PromptCard';
 
 const Profile = ({ user, headline, desc, posts,handleDelete ,handleEdit}) => {
