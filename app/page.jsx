@@ -2,6 +2,9 @@
 import React, { useState } from 'react'
 import '@/styles/index.css';
 import Feed from '@/components/Feed';
+import { X } from 'lucide-react';
+
+
 
 
 const Home = () => {
@@ -17,10 +20,16 @@ const Home = () => {
     <div className='flex flex-col mt-8 p-2 '>
       <div className='w-full flex justify-center items-center'>
 
+        <div className='bg-white   relative flex items-center justify-center border border-gray-300  w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-md'>
 
-      <input value={userInput} onChange={(e)=>{setUserInput(e.target.value)}} type="text" className='border border-gray-300 p-2 w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-md' placeholder='Search For A Tag Or Username' />
+      <input  value={userInput} onChange={(e)=>{setUserInput(e.target.value)}} type="text" className='w-full p-2 h-full' placeholder='Search For A Tag Or Username' />
+        {
+        userInput&&<X onClick={()=>setUserInput('')} className='absolute hover:bg-gray-200 text-gray-500 cursor-pointer mr-2 right-0 '/>
+        }
+          
+        </div>
       </div>
-      
+    
       <Feed userInput={userInput}/>
 
     </div>

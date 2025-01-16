@@ -31,7 +31,7 @@ const Profile = ({ user, headline, desc, posts,handleDelete ,handleEdit}) => {
           {headline ? headline : ""} Posts
         </h1>
         <div className='grid grid-cols-1 mt-8 sm:grid-cols-2 gap-2 px-2  lg:grid-cols-3'>
-          {posts &&
+          {posts?
             posts.map((item, idx) => (
               <PromptCard
                 key={idx}
@@ -43,7 +43,12 @@ const Profile = ({ user, headline, desc, posts,handleDelete ,handleEdit}) => {
                 handleEdit={handleEdit} handleDelete={handleDelete}
                 id={item._id}
               />
-            ))}
+            )):<div className='flex items-center justify-center'>
+              <h1>
+                You Don't Have Any Post Yet 
+              </h1>
+            </div>
+          }
         </div>
       </div>
     </div>
