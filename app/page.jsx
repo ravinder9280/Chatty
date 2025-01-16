@@ -1,10 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import '@/styles/index.css';
-import PromptCard from '@/components/PromptCard';
 import Feed from '@/components/Feed';
 
 
 const Home = () => {
+  const [userInput,setUserInput]=useState('')
   return (<>
     <div className="flex flex-col  items-center mt-4 gap-4 p-4 " > 
 
@@ -17,10 +18,10 @@ const Home = () => {
       <div className='w-full flex justify-center items-center'>
 
 
-      <input type="text" className='border border-gray-300 p-2 w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-md' placeholder='Search For A Tag Or Username' />
+      <input value={userInput} onChange={(e)=>{setUserInput(e.target.value)}} type="text" className='border border-gray-300 p-2 w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-md' placeholder='Search For A Tag Or Username' />
       </div>
       
-      <Feed/>
+      <Feed userInput={userInput}/>
 
     </div>
   </>
