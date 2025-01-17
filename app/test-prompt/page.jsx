@@ -9,8 +9,8 @@ const page = () => {
     const [loading,setLoading]=useState(false)
     const [result,setResult]=useState('')
         const generatePrompt=async(e)=>{
-            setLoading(true)
-            e.preventDefault()
+          e.preventDefault()
+          setLoading(true)
             try {
                 const response= await axios.post('/api/generate-prompt',{prompt})
                 setResult(response.data.data)
