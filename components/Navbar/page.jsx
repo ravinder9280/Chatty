@@ -22,11 +22,11 @@ const page = () => {
   console.log(session?.user);
   
   return (
-    <nav className="flex nav p-4 sticky top-0 items-center mb-8 justify-between">
+    <nav className="flex nav z-10 p-4 sticky top-0 items-center  justify-between">
       <Link href="/" className="p-2 hover:bg-gray-300  hover:rounded-2xl">
        
 
-        <p className=" text-3xl font-extrabold text-green-500">Chatty</p>
+        <p className=" text-3xl font-extrabold text-green-600">Chatty</p>
       </Link>
       <div className="flex gap-4">
         <Link
