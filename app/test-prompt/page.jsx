@@ -6,6 +6,7 @@ import { Loader2 } from 'lucide-react';
 
 const page = () => {
     const [prompt,setPrompt]=useState('')
+    const [recentPrompt,setRecentPrompt]=useState('')
     const [loading,setLoading]=useState(false)
     const [result,setResult]=useState('')
         const generatePrompt=async(e)=>{
@@ -14,8 +15,9 @@ const page = () => {
             try {
                 const response= await axios.post('/api/generate-prompt',{prompt})
                 setResult(response.data.data)
+                setRecentPrompt(prompt)
                 
-                // setPrompt('')
+                setPrompt('')
                 
             } catch (error) {
                 console.log(error);
@@ -36,7 +38,7 @@ const page = () => {
         <div className='bg-gray-400 rounded-b-xl max-w-[80%]    rounded-s-xl p-4'>
 
         <p className='text-white ' >
-          {prompt}
+          {recentPrompt}
 
         </p>
         </div>
