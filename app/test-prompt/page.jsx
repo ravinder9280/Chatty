@@ -60,7 +60,7 @@ const page = () => {
   onChange={(e) => setPrompt(e.target.value)}
   type="text"
   className='w-full text-gray-600 rounded-full  p-4 h-full'
-  placeholder='Search For A Prompt , Tag Or Username'
+  placeholder='Ask Gemini'
 />
 <button type='submit' className='absolute  bg-white text-gray-500 cursor-pointer mr-4 right-0'>
   {
