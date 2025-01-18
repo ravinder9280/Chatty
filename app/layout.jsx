@@ -3,6 +3,9 @@ import Nav from "@/components/Navbar/page"
 import Provider from "@/components/Provider.jsx"
 import { Toaster } from "sonner"
 import { Afacad } from 'next/font/google'
+import '@/styles/index.css';
+
+
 
 export const metadata = {
   title: 'Chatty AI',
@@ -24,6 +27,10 @@ export default function RootLayout({ children }) {
     <html lang='en'
     className={epilogue.className}
     >
+      <head>
+      <link rel="shortcut icon" href="/google-gemini-icon.svg" />
+
+      </head>
     <body >
       <Provider>
         <div className='main'>

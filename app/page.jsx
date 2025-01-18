@@ -28,14 +28,14 @@ const Home = () => {
         </div>
         <div className='w-full mt-2 flex justify-center items-center'>
 
-          <form onSubmit={handleSubmit} className='bg-white   relative flex items-center justify-center border border-gray-300  w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-md'>
+          <form onSubmit={handleSubmit} className='bg-white   relative flex items-center justify-center border border-gray-300  w-full sm:w-[75%] md:w-[60%] lg:w-[50%] rounded-lg'>
 
             <input
               ref={inputRef}
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               type="text"
-              className='w-full p-2 h-full'
+              className='w-full p-2 rounded-lg h-full'
               placeholder='Search For A Prompt , Tag Or Username'
             />
             {

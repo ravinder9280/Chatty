@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import cimg from "@/public/logo.jpg";
 import { useState, useEffect } from "react";
 
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
