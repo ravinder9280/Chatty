@@ -74,7 +74,7 @@ const page = () => {
   value={prompt}
   onChange={(e) => setPrompt(e.target.value)}
   type="text"
-<<<<<<< HEAD
+
   className='w-full text-gray-600 rounded-full focus:outline-none p-4 h-full'
   placeholder='Search For A Prompt , Tag Or Username'
 />
