@@ -76,7 +76,7 @@ const page = () => {
   type="text"
 
   className='w-full text-gray-600 rounded-full focus:outline-none p-4 h-full'
-  placeholder='Search For A Prompt , Tag Or Username'
+  placeholder='Ask Gemini'
 />
 <button type='submit' className=' flex items-center justify-center text-gray-500 w-[10%] cursor-pointer  '>
   {
