@@ -74,7 +74,7 @@ const page = () => {
   value={prompt}
   onChange={(e) => setPrompt(e.target.value)}
   type="text"
-  className='w-full text-gray-600 rounded-full  p-4 h-full'
+  className='w-full text-gray-600 rounded-full focus:outline-none p-4 h-full'
   placeholder='Search For A Prompt , Tag Or Username'
 />
 <button type='submit' className=' flex items-center justify-center text-gray-500 w-[10%] cursor-pointer  '>
