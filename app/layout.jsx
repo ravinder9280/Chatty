@@ -2,6 +2,7 @@
 import Nav from "@/components/Navbar/page"
 import Provider from "@/components/Provider.jsx"
 import { Toaster } from "sonner"
+import '@/styles/index.css';
 import { Afacad } from 'next/font/google'
 import '@/styles/index.css';
 
