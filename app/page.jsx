@@ -13,6 +13,9 @@ const Home = () => {
     inputRef.current.blur();
   }
 
+  
+  
+
   return (
     <>
       <div className="flex flex-col  items-center mt-4 gap-4 p-4 " > 

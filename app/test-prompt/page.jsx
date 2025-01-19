@@ -4,6 +4,7 @@ import { SendHorizontal } from 'lucide-react';
 import axios from 'axios';
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
+import MyLoader from '@/components/Loading/page';
 
 const page = () => {
     const [prompt,setPrompt]=useState('')
@@ -29,6 +30,8 @@ const page = () => {
 
     }
 
+   
+
   
   return (
     <div className='flex justify-center h-full w-full  items-center'>
@@ -47,23 +50,28 @@ const page = () => {
         </div>
         </div>
         <div className='mt-2 flex flex-col gap-2  '>
+          
           <Image height={32} width={32} src={'/google-gemini-icon.png'} />
-        
-        <p className='text-gray-900 shadow-lg' dangerouslySetInnerHTML={{__html:result}} >
+        {
+          loading?<MyLoader/>:
+        <p className='text-gray-900 shadow-lg font-light leading-[1.8]' dangerouslySetInnerHTML={{__html:result}} >
           
 
         </p>
+        }
         </div>
 
       </div>:
-      <>
-      <div className='flex flex-col items-center w-full justify-center gap-4'>
+      < >
+      <div className='flex flex-col items-center h-[70vh] justify-center gap-4'>
         
-
-        <Image height={200} width={200} src={'/google-gemini-icon.png'}/>
+        
+          
+        <Image height={100} width={100} src={'/google-gemini-icon.png'}/>
         <p className='text-gray-500'>Hello, ask Anything You want</p>
         
         
+      
       </div>
       </>
       }
